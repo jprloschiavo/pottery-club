@@ -13,6 +13,10 @@
     --color-accent: rgb(227, 83, 54);
 
     --day-w: 6rem;
+    --logo-h: 48px;
+    --facility-mh: 320px;
+
+    --header-fs: 1.25rem
 }
 
 * {
@@ -52,11 +56,60 @@ html {
     color: var(--color-white);
 }
 
+/* ----- school logo ----- */
+.school__logo {
+    width: auto;
+    height: var(--logo-h);
+}
+
+/* ----- hero header ----- */
+.hero__header {
+    position: absolute;
+    padding-top: var(--space-sm);
+    padding-left: var(--space-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    background: linear-gradient(to bottom, var(--color-black), transparent);
+}
+
+.hero__nav {
+    padding-right: var(--space-md);
+}
+
+.hero__nav__list {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.hero__nav__li {
+    display: inline;
+}
+
+.hero__nav__link {
+    color: var(--color-white);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: var(--header-fs);
+}
+
+.hero__nav__link:hover {
+    color: var(--color-accent);
+}
+
+.hero__nav__link:active {
+    color: var(--color-white);
+}
+
 /* ----- hero ----- */
 .hero {
     background: no-repeat left / cover url("../media/hero/people-making-clay-pot--quino-al.jpg");
     color: var(--color-white);
     height: 100vh;
+    position: relative;
+    z-index: 3;
 }
 
 .hero__content {
@@ -156,6 +209,7 @@ html {
     color: var(--color-white);
     text-transform: uppercase;
     font-family: inherit;
+    cursor: pointer;
 }
 
 .form__submit:hover {
@@ -225,6 +279,7 @@ html {
 .facility {
     aspect-ratio: 16 / 9;
     position: relative;
+    min-height: var(--facility-mh);
 }
 
 .facility__img {
@@ -267,13 +322,15 @@ html {
 
 /* ----- footer ----- */
 .footer {
-    padding: var(--space-md) 0;
+    padding: var(--space-md);
     background-color: var(--color-black);
     border-top: 1px solid var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .footer__nav {
-    padding: 0 var(--space-md);
     display: flex;
     justify-content: right;
 }
@@ -301,6 +358,22 @@ html {
 }
 
 /* ----- media queries ----- */
+@media only screen and (max-width: 488px) {
+    .school__logo--footer {
+        display: none;
+    }
+
+    .footer {
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .hero__nav {
+        display: none;
+    }
+}
+
 @media only screen and (min-width: 960px) {
     .join {
         display: flex;
@@ -322,6 +395,10 @@ html {
 }
 
 @media only screen and (min-width: 1200px) {
+    .hero__nav__list {
+        gap: var(--space-md);
+    }
+
     .hero__title {
         font-size: 2.5rem;
     }
@@ -332,6 +409,15 @@ html {
 
     .join__img {
         max-width: var(--mw-3);
+    }
+
+    .hero__header {
+        padding-top: var(--space-md);
+        padding-left: var(--space-md);
+    }
+
+    .hero__nav {
+        padding-right: var(--space-md);
     }
 
     .hero__content,
