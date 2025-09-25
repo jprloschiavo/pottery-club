@@ -14,7 +14,6 @@
 
     --day-w: 6rem;
     --logo-h: 48px;
-    --facility-mh: 320px;
 
     --header-fs: 1.25rem
 }
@@ -279,7 +278,6 @@ html {
 .facility {
     aspect-ratio: 16 / 9;
     position: relative;
-    min-height: var(--facility-mh);
 }
 
 .facility__img {
@@ -359,7 +357,8 @@ html {
 
 /* ----- media queries ----- */
 @media only screen and (max-width: 488px) {
-    .school__logo--footer {
+    .school__logo--footer,
+    .facility__desc {
         display: none;
     }
 
@@ -370,6 +369,16 @@ html {
 
 @media only screen and (max-width: 560px) {
     .hero__nav {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 648px) {
+    .event {
+        grid-template-columns: 1fr;
+    }
+
+    .day {
         display: none;
     }
 }
