@@ -28,10 +28,9 @@ html {
     font-size: 16px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
-body {
+html, body {
     overflow-x: hidden;
 }
 
@@ -297,7 +296,6 @@ body {
     height: 100%;
     top: 0;
     color: var(--color-white);
-    padding: 0 var(--space-sm);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -305,12 +303,14 @@ body {
 
 .facility__content--left {
     background: linear-gradient(to right, var(--color-black), transparent);
+    padding-left: var(--space-sm);
 }
 
 .facility__content--right {
     background: linear-gradient(to left, var(--color-black), transparent);
     align-items: end;
     text-align: right;
+    padding-right: var(--space-sm);
 }
 
 .facility__title {
